@@ -20,3 +20,40 @@ docker pull mongo:latest
 
 # Run the MongoDB container
 docker run --name mongodb -d -p 27017:27017 mongo:latest
+
+docker pull mongo:latest: Downloads the latest MongoDB image from Docker Hub.
+
+docker run --name mongodb -d -p 27017:27017 mongo:latest: Creates and starts a container named mongodb in detached mode, mapping port 27017 on your local machine to port 27017 in the container.
+```
+Check if the container is running properly
+```docker ps```
+
+Setup the node repository
+```
+# Clone your project repository
+git clone <YOUR_REPOSITORY_URL>
+
+# Navigate into your project directory
+cd <YOUR_PROJECT_NAME>
+
+# Install the project dependencies
+npm install
+```
+Replace <YOUR_REPOSITORY_URL> with the URL of your repository and <YOUR_PROJECT_NAME> with the name of your project directory.
+
+Connect to MongoDB
+In this project, the connection to MongoDB is made using Mongoose. Here is the connection code (src/databaseConnect.js):
+```
+import mongoose from "mongoose";
+
+async function databaseConnect() {
+  mongoose.connect("mongodb://localhost:27017/mongodb");
+  return mongoose.connection;
+}
+
+export default databaseConnect;
+```
+
+Run the Project
+To start the project, execute the following command:
+``` npm start ```
