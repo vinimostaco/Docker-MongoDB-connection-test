@@ -1,6 +1,6 @@
 # First MongoDB Connection Project using Docker
 
-This is my first project connecting to a MongoDB instance locally, using Docker to manage the database. Below are detailed instructions for setting up and running the project using Bash commands.
+This is my first project connecting to a MongoDB instance locally, using Docker to manage the database. Below are detailed instructions for setting up and running the project.
 
 ## Prerequisites
 
@@ -15,22 +15,19 @@ This is my first project connecting to a MongoDB instance locally, using Docker 
 First, let's create and run a Docker container with MongoDB:
 
 ```bash
-# Pull the latest MongoDB image
-docker pull mongo:latest
-
 # Run the MongoDB container
 docker run --name mongodb -d -p 27017:27017 mongo:latest
 
-docker pull mongo:latest: Downloads the latest MongoDB image from Docker Hub.
-
 docker run --name mongodb -d -p 27017:27017 mongo:latest: Creates and starts a container named mongodb in detached mode, mapping port 27017 on your local machine to port 27017 in the container.
 ```
-Check if the container is running properly
-```docker ps```
+Check if the container is running properly whith this command:
+```
+docker ps
+```
 
 Setup the node repository
 ```
-# Clone your project repository
+# Clone the repository
 git clone <YOUR_REPOSITORY_URL>
 
 # Navigate into your project directory
